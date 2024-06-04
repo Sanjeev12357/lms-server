@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"https://learning-mangement-system-pi.vercel.app/",
+		origin:"https://learning-mangement-system-pi.vercel.app",
 		credentials:true,
 	})
 )
