@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "build": "node build --output public",
     "dev": "nodemon index.js"
   },
   "keywords": [],
