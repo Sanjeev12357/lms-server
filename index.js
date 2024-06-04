@@ -23,8 +23,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"https://lms-server-git-main-sanjeevs-projects-2af8b8d1.vercel.app/api/v1",
-		
+		origin:"https://learning-mangement-system-pi.vercel.app/",
+		credentials:true,
 	})
 )
 
