@@ -90,13 +90,13 @@ exports.verifyPayment = async (req, res) => {
     !courses ||
     !userId
   ) {
-    return res.status(200).json({ success: false, message: "Payment Failed" })
+    return res.status(400).json({ success: false, message: "Payment Failed1" })
   }
 
   let body = razorpay_order_id + "|" + razorpay_payment_id
 
   const expectedSignature = crypto
-    .createHmac("sha256", process.env.RAZORPAY_SECRET)
+    .createHmac("sha256", WnGZpISItN3rrwkIwhgT6CyV)
     .update(body.toString())
     .digest("hex")
 
@@ -105,7 +105,7 @@ exports.verifyPayment = async (req, res) => {
     return res.status(200).json({ success: true, message: "Payment Verified" })
   }
 
-  return res.status(200).json({ success: false, message: "Payment Failed" })
+  return res.status(400).json({ success: false, message: "Payment Failed2" })
 }
 
 // Send Payment Success Email
