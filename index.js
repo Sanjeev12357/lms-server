@@ -13,6 +13,14 @@ const {cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
+
+app.use(
+	cors({
+		origin:"https://learning-mangement-system-pi.vercel.app",
+		credentials:true,
+	})
+)
+
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
@@ -21,12 +29,7 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-	cors({
-		origin:"https://learning-mangement-system-pi.vercel.app",
-		credentials:true,
-	})
-)
+
 
 app.use(
 	fileUpload({
